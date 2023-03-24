@@ -14,9 +14,9 @@ Say you're in any one of these scenarios:
 
 Whatever the case, there are many situations where you'll end up with screenshots rather than source code!  
 You have three options:  
-(1) Type out the entire content of the screenshot, taking a bunch of time.  
-(2) Use conventional img2text methods to convert code into text, and then fix the format errors.  
-(3) Use Screenshot2Code, optimized for code screenshots in the most common programming languages.  
+(1) **Typing it out**: Type out the entire content of the screenshot, taking a bunch of time.  
+(2) **Using Conventional OCR**: Convert code into text, and then fix the format errors.  
+(3) **Using Screenshot2Code**: Optimized for code screenshots in the most common programming languages.  
 
 To save time and maintain format, you may choose 3!
 
@@ -40,10 +40,12 @@ Whatever the case, there are several common problems you may run into.
 
 **Screenshots, on the other hand, preserve all the information, regardless of origin.**
 
-## Screenshot2Code
 
 #### Conventional Copy-Paste
 > Show visual (.gif) of copying/pasting code across two platforms that causes loss of information.
+
+#### Conventional OCR
+> Show 2 screenshots, one showing the input image and one showing the misformatted output text.
 
 #### Screenshot2Code
 > Show visual (.gif) of Screenshot2Code converting screenshot into formatted code.
