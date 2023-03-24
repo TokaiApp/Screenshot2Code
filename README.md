@@ -82,5 +82,5 @@ Screenshots almost always come in one of two formats depending on the OS.
 
 
 #### Authorship
-This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) from [DXDR](https://dxdr.ai). DXDR is developing a proprietary notetaking software for engineers.  
+This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) from [DXDR](https://dxdr.ai). DXDR is developing a proprietary notetaking software - DragonNote - for programmers.  
 For more information or to find out how to contribute to Screenshot2Code, please email me: seth@dxdr.ai
