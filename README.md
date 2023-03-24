@@ -49,7 +49,16 @@ Whatever the case, there are several common problems you may run into.
 > Show visual (.gif) of copying/pasting code across two platforms that causes loss of information.
 
 #### Conventional OCR
-> Show 2 screenshots, one showing the input image and one showing the misformatted output text.
+
+This is a code snippet from a typical data science program.
+![Input](python_input.png)
+
+&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
+&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp;
+
+![Output](python_output.png)
+
+As shown above, the output is not only totally misformatted Python code - it's also unrunnable.
 
 #### Screenshot2Code
 > Show visual (.gif) of Screenshot2Code converting screenshot into formatted code.
