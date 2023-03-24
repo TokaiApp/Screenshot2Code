@@ -44,7 +44,7 @@ Why is Screenshot2Code needed?
   - **Github CoPilot** cannot handle image modalities.
   - **Codex** cannot handle image modalities.
 
-To the best of our knowledge, there are currently no open-source repositories or APIs that are specifically designed for converting a screenshot into code in a way that preserves syntactical information such as spacing, indentation, and newlines. While there are some OCR and ML tools that can recognize text and generate code from images such as OpenCV or (Pytesseract)[https://github.com/madmaze/pytesseract], these tools are not specifically designed for code recognition and may not be able to preserve formatting and syntax information to the extent required for complex code.
+To the best of our knowledge, there are currently no open-source repositories or APIs that are specifically designed for converting a screenshot into code in a way that preserves syntactical information such as spacing, indentation, and newlines. While there are many OCR and ML tools that can recognize text and generate text from images such as OpenCV or [Pytesseract](https://github.com/madmaze/pytesseract), these tools are not specifically designed for code recognition and may not be able to preserve formatting and syntax information to the extent required for complex code.
 
 
 
@@ -57,7 +57,7 @@ Screenshots almost always come in one of two formats depending on the OS.
 - **Windows**: .jpg, .jpeg
 
 ### Languages we Support
-We plan to support some of the most common languages
+We plan to support some of the most common languages such as:
 - Python: .py
 - C: .c
 - C++: .cpp, .cc, .cxx, .hpp, .h, .hxx
@@ -68,10 +68,8 @@ We plan to support some of the most common languages
 - Ruby: .rb
 - Objective-C: .m
 - Kotlin: .kt
-- TypeScript: .ts
 - Go: .go
 - Rust: .rs
-- Lua: .lua
 - Perl: .pl
 - Shell: .sh
 - SQL: .sql
@@ -81,5 +79,5 @@ We plan to support some of the most common languages
 If there are other languages you would like to be added, please contact us!
 
 #### Authorship
-This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) from [DXDR](https://dxdr.ai).
-For more information or to find out how to contribute to Screenshot2Code, please email me: seth@dxdr.ai
+This project is led by [Seth Harding](https://linkedin.com/in/SethHasi).  
+For more information or to find out how to contribute to Screenshot2Code, please send an email! seth@dxdr.ai
