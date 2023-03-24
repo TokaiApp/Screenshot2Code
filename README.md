@@ -41,6 +41,10 @@ Whatever the case, there are several common problems you may run into.
 **Screenshots, on the other hand, preserve all the information, regardless of origin.**
 
 
+
+
+## Screenshot2Code vs. Existing Methods
+
 #### Conventional Copy-Paste
 > Show visual (.gif) of copying/pasting code across two platforms that causes loss of information.
 
@@ -50,10 +54,6 @@ Whatever the case, there are several common problems you may run into.
 #### Screenshot2Code
 > Show visual (.gif) of Screenshot2Code converting screenshot into formatted code.
 
-
-
-
-## Screenshot2Code vs. Existing Methods
 Why is Screenshot2Code needed?
 - Existing frameworks, libraries, and APIs tend to fall into one of two categories: (1) proprietary and closed-source or (2) open-source but designed for images and not particularly code.
 - Generative AI - why not just ask AGI to do it?
