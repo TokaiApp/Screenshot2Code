@@ -7,7 +7,7 @@ Say you're in any one of these scenarios:
 (1) Your friend sends you a code screenshot message, but you want the code instead.  
 (2) The educational website you're looking at uses code images instead of code.  
 (3) The reference website you're using doesn't allow for copying text to your clipboard.  
-(4) You're taking notes for a programming class and you take a screenshot.  
+(4) You're taking notes for a programming class and you take a screenshot of code in a YouTube tutorial.  
 (5) The code you're looking at is too long to copy and paste to your clipboard.  
 (6) The code you copied to your clipboard was overwritten by a more recent copy.  
 (7) The CS textbook you're reading is a scanned PDF file that doesn't allow copy-paste.  
@@ -26,7 +26,7 @@ To save time and maintain format, you may choose 3!
 Copy-pasting code is done all the time for a plethora of purposes!
 1. **Code Generation**: Whether it's CoPilot, ChatGPT, or any other code generation platform, it's now very often the case that you'll need to copy and paste code from these generators into your IDE.
 2. **Code from Websites** such as StackOverflow can be copied and pasted into your IDE, or vice versa.
-3. **Collaborating**: When collaborating on a project with other developers, it may be necessary to copy and paste code snippets or entire functions to share them with other team members. This can be a quick and easy way to share code and collaborate effectively. But sending code through textual messages on social media runs into so many problems, so people often send screenshots instead.
+3. **Collaborating**: When collaborating on a project with other developers, it may be necessary to copy and paste code snippets or entire functions to share them with other team members. This can be a quick and easy way to share code and collaborate effectively. But sending code through textual messages on social media can cause you to run into many problems, so people often send screenshots instead.
 4. **Reusing code**: Copy and paste code from an existing project or codebase to reuse it in a new project. This can save time and effort and also ensure consistency across projects.
 5. **Learning and experimenting**: When learning a new programming language or technology, a developer might copy and paste code snippets from tutorials or forums to experiment with and understand how things work. This can help the developer learn faster and make progress more efficiently.
 
