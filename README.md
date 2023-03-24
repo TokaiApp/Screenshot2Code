@@ -1,9 +1,11 @@
-# Screenshot2Code (S2C)
+# Screenshot2Code (S2C) - Convert your screenshot back to code in almost any language!
 
-In a nutshell: Screenshot code that is written in just about any language, and use Screenshot2Code to convert it to textual format!  
+**In a nutshell**:  
+Copying and pasting code is sometimes not practical.  
+Use Screenshot2Code to convert code screenshots to text while preserving its format and steering clear of clipboard limitations!
 > Note: this project is currently in ideation stage.
 
-## The Basics: Copy-Paste
+## The Basics of Copy-Paste
 Copy-pasting code is done all the time for a plethora of purposes!
 1. **Code Generation**: Whether it's CoPilot, ChatGPT, or any other code generation platform, it's now very often the case that you'll need to copy and paste code from these generators into your IDE.
 2. **Code from Websites** such as StackOverflow can be copied and pasted into your IDE, or vice versa.
@@ -21,11 +23,12 @@ Whatever the case, there are several common problems you may run into.
 
 **Screenshots, on the other hand, preserve all the information, regardless of origin.**
 
+## Screenshot2Code
 
 #### Conventional Copy-Paste
 > Show visual (.gif) of copying/pasting code across two platforms that causes loss of information.
 
-#### STC
+#### Screenshot2Code
 > Show visual (.gif) of Screenshot2Code converting screenshot into formatted code.
 
 
@@ -33,8 +36,7 @@ Whatever the case, there are several common problems you may run into.
 
 ## Screenshot2Code vs. Existing Methods
 Why is Screenshot2Code needed?
-- Existing frameworks, libraries, and APIs
-  - 
+- Existing frameworks, libraries, and APIs tend to fall into one of two categories: (1) proprietary and closed-source or (2) open-source but designed for images and not particularly code.
 - Generative AI - why not just ask AGI to do it?
   - **GPT-4** can handle image modalities, but it is not accessible to everyone and it is not specialized for this purpose
   - **ChatGPT** does not accept image input.
@@ -42,20 +44,20 @@ Why is Screenshot2Code needed?
   - **Github CoPilot** cannot handle image modalities.
   - **Codex** cannot handle image modalities.
 
-What about current open-source APIs?
-- There aren't any tha
-
-
+To the best of our knowledge, there are currently no open-source repositories or APIs that are specifically designed for converting a screenshot into code in a way that preserves syntactical information such as spacing, indentation, and newlines. While there are some OCR and ML tools that can recognize text and generate code from images such as OpenCV or (Pytesseract)[https://github.com/madmaze/pytesseract], these tools are not specifically designed for code recognition and may not be able to preserve formatting and syntax information to the extent required for complex code.
 
 
 
 
 ## Technical
+
+### Screenshot Formats
 Screenshots almost always come in one of two formats depending on the OS.
 - **macOS**, **Ubuntu**, and other Linux-based OS's: .png
 - **Windows**: .jpg, .jpeg
 
 ### Languages we Support
+We plan to support some of the most common languages
 - Python: .py
 - C: .c
 - C++: .cpp, .cc, .cxx, .hpp, .h, .hxx
@@ -76,11 +78,8 @@ Screenshots almost always come in one of two formats depending on the OS.
 - HTML: .html, .htm
 - CSS: .css
 - XML: .xml
-
-
-
-
+If there are other languages you would like to be added, please contact us!
 
 #### Authorship
-This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) from [DXDR](https://dxdr.ai). DXDR is developing a proprietary notetaking software - DragonNote - for programmers.  
+This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) from [DXDR](https://dxdr.ai).
 For more information or to find out how to contribute to Screenshot2Code, please email me: seth@dxdr.ai
