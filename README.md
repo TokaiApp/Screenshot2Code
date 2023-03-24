@@ -1,4 +1,4 @@
-# Screenshot2Code (S2C) - Convert your screenshot back to code in almost any language!
+# Screenshot2Code (S2C) - Convert your screenshot to code in almost any language!
 
 **In a nutshell**:  
 Copying and pasting code is sometimes not practical.  
