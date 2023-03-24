@@ -1,8 +1,25 @@
-# Screenshot2Code (S2C) - Convert your screenshot to code in almost any language!
+# Screenshot2Code (S2C) - OCR Optimized for Code Screenshots!
 
 **In a nutshell**:  
-Copying and pasting code is sometimes not practical.  
 Use Screenshot2Code to convert code screenshots to text while preserving its format and steering clear of clipboard limitations!
+
+Say you're in any one of these scenarios:  
+(1) Your friend sends you a code screenshot message, but you want the code instead.  
+(2) The educational website you're looking at uses code images instead of code.  
+(3) The reference website you're using doesn't allow for copying text to your clipboard.  
+(4) You're taking notes for a programming class and you take a screenshot.  
+(5) The code you're looking at is too long to copy and paste to your clipboard.  
+(6) The code you copied to your clipboard was overwritten by a more recent copy.  
+(7) The CS textbook you're reading is a scanned PDF file that doesn't allow copy-paste.  
+
+Whatever the case, there are many situations where you'll end up with screenshots rather than source code!  
+You have three options:  
+(1) Type out the entire content of the screenshot, taking a bunch of time.  
+(2) Use conventional img2text methods to convert code into text, and then fix the format errors.  
+(3) Use Screenshot2Code, optimized for code screenshots in the most common programming languages.  
+
+To save time and maintain format, you may choose 3!
+
 > Note: this project is currently in ideation stage.
 
 ## The Basics of Copy-Paste
