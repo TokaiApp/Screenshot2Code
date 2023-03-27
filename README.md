@@ -54,7 +54,7 @@ This is a code snippet from a typical data science program.
 ![Input](python_input.png)
 
 &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp;
+&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
 
 ![Output](python_output.png)
 
