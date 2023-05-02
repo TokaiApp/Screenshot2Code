@@ -3,9 +3,10 @@ import shutil
 import sys
 
 import pytesseract as tess
+from guesslang import Guess
 from PIL import Image
 
-os.environ["TESSDATA_PREFIX"] = "/Users/seth/opt/anaconda3/share/tessdata"
+# os.environ["TESSDATA_PREFIX"] = "/Users/seth/opt/anaconda3/share/tessdata"
 
 
 # Set the path to the Tesseract OCR executable
@@ -45,6 +46,12 @@ def post_process(text):
 """
 
 
+def guess_lang(text_in: str):
+    guess = Guess()
+    name = guess.language_name(text_in)
+    print(name)
+
+
 def s2c(image_path):
     try:
         img = Image.open(image_path)
@@ -58,6 +65,7 @@ def s2c(image_path):
         # processed_text = post_process(text)
 
         # Save the extracted code to a text file
+        guess_lang(text)
 
         return text
 
@@ -69,6 +77,7 @@ if __name__ == "__main__":
     if check_for_tesseract() is False:
         print("Please make sure you have tesseract installed.")
         exit(1)
+    check_for_tessdata_prefix()
 
     if len(sys.argv) == 3:
         image_path = sys.argv[1]
