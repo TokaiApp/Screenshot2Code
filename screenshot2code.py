@@ -1,14 +1,25 @@
-import sys
 import os
-from PIL import Image
-import pytesseract as tess
+import shutil
+import sys
 
-os.environ['TESSDATA_PREFIX'] = '/Users/seth/opt/anaconda3/share/tessdata'
+import pytesseract as tess
+from PIL import Image
+
+os.environ["TESSDATA_PREFIX"] = "/Users/seth/opt/anaconda3/share/tessdata"
+
+# tess.pytesseract.tesseract_cmd = r"/opt/local/bin/tesseract"
+
 
 # Set the path to the Tesseract OCR executable
-tess.pytesseract.tesseract_cmd = r'/opt/local/bin/tesseract'
+def check_for_tesseract():
+    tess_cmd = shutil.which("tesseract")
+    if tess_cmd is not None:
+        tess.pytesseract.tesseract_cmd = tess_cmd
+        return True
+    return False
 
-'''
+
+"""
 def post_process(text):
     lines = text.split('\n')
     processed_lines = []
@@ -25,7 +36,8 @@ def post_process(text):
         processed_lines.append(indented_line)
 
     return '\n'.join(processed_lines)
-'''
+"""
+
 
 def s2c(image_path):
     try:
@@ -37,7 +49,7 @@ def s2c(image_path):
         text = tess.image_to_string(img, config=config)
 
         # Post-process the extracted text to maintain indentation
-        #processed_text = post_process(text)
+        # processed_text = post_process(text)
 
         # Save the extracted code to a text file
 
@@ -48,6 +60,10 @@ def s2c(image_path):
 
 
 if __name__ == "__main__":
+    if check_for_tesseract() is False:
+        print("Please make sure you have tesseract installed.")
+        exit(1)
+
     if len(sys.argv) == 3:
         image_path = sys.argv[1]
         output_path = sys.argv[2]
