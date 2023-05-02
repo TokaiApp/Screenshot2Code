@@ -48,7 +48,7 @@ def s2c(image_path):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 2:
+    if len(sys.argv) == 3:
         image_path = sys.argv[1]
         output_path = sys.argv[2]
 
@@ -56,4 +56,4 @@ if __name__ == "__main__":
         with open(output_path, "w") as f:
             f.write(text)
     else:
-        print("Usage: python screenshot2code.py <image_path>")
+        print("Usage: python screenshot2code.py <screenshot_path> <output_path>")
