@@ -7,8 +7,6 @@ from PIL import Image
 
 os.environ["TESSDATA_PREFIX"] = "/Users/seth/opt/anaconda3/share/tessdata"
 
-# tess.pytesseract.tesseract_cmd = r"/opt/local/bin/tesseract"
-
 
 # Set the path to the Tesseract OCR executable
 def check_for_tesseract():
@@ -17,6 +15,14 @@ def check_for_tesseract():
         tess.pytesseract.tesseract_cmd = tess_cmd
         return True
     return False
+
+
+def check_for_tessdata_prefix():
+    if os.environ.get("TESSDATA_PREFIX"):
+        print("TESSDATA_PREFIX has been defined")
+    else:
+        # not sure how to deal with this yet
+        os.environ["TESSDATA_PREFIX"] = ""
 
 
 """
