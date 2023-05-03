@@ -28,6 +28,7 @@ def check_for_tessdata_prefix():
         os.environ["TESSDATA_PREFIX"] = ""
 
 
+# FIXME: sometime the space formatting is very wrong
 def preserve_identation(frame: pd.DataFrame) -> str:
     df1 = frame[(frame.conf != "-1") & (frame.text != " ") & (frame.text != "")]
 
