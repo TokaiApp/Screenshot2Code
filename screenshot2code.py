@@ -11,58 +11,96 @@ from pytesseract import Output
 # os.environ["TESSDATA_PREFIX"] = "/Users/seth/opt/anaconda3/share/tessdata"
 
 
+class Screenshot2Code:
+    @staticmethod
+    def check_for_tesseract():
+        tess_cmd = shutil.which("tesseract")
+        if tess_cmd is not None:
+            tess.pytesseract.tesseract_cmd = tess_cmd
+            return True
+        return False
+
+    @staticmethod
+    def check_for_tessdata_prefix():
+        if os.environ.get("TESSDATA_PREFIX"):
+            print("TESSDATA_PREFIX has been defined")
+        else:
+            # not sure how to deal with this yet
+            os.environ["TESSDATA_PREFIX"] = ""
+
+    # FIXME: sometime the space formatting is very wrong
+    @staticmethod
+    def preserve_identation(frame: pd.DataFrame) -> str:
+        df1 = frame[(frame.conf != "-1") & (frame.text != " ") & (frame.text != "")]
+
+        # sort blocks vertically
+        code = ""
+        sorted_blocks = (
+            df1.groupby("block_num").first().sort_values("top").index.tolist()
+        )
+        for block in sorted_blocks:
+            curr = df1[df1["block_num"] == block]
+            sel = curr[curr.text.str.len() > 3]
+            char_w = (sel.width / sel.text.str.len()).mean()
+            prev_par, prev_line, prev_left = 0, 0, 0
+            text = ""
+            for ix, ln in curr.iterrows():
+                # add new line when necessary
+                if prev_par != ln["par_num"]:
+                    text += "\n"
+                    prev_par = ln["par_num"]
+                    prev_line = ln["line_num"]
+                    prev_left = 0
+                elif prev_line != ln["line_num"]:
+                    text += "\n"
+                    prev_line = ln["line_num"]
+                    prev_left = 0
+
+                added = 0  # num of spaces that should be added
+                if ln["left"] / char_w > prev_left + 1:
+                    added = int((ln["left"]) / char_w) - prev_left
+                    text += " " * 2 * added  # go extra on identation by default
+                text += ln["text"] + " "
+                prev_left += len(ln["text"]) + added + 1
+            text += "\n"
+            code += text
+
+        return code
+
+    @staticmethod
+    def guess_lang(text_in: str):
+        print(text_in)
+        guess = Guess()
+        name = guess.language_name(text_in)
+        print(name)
+
+    def s2c(self, image_path):
+        try:
+            img = Image.open(image_path)
+
+            # Custom Tesseract configuration for preserving whitespace and formatting
+            config = r"-c preserve_interword_spaces=1 --psm 6 --oem 2"
+
+            text_data = tess.image_to_data(img, config=config, output_type=Output.DICT)
+            # print(text_data)
+            frame = pd.DataFrame(text_data)
+            # print("------------------------------")
+            # print(frame)
+            text = self.preserve_identation(frame)
+
+            # Post-process the extracted text to maintain indentation
+            # processed_text = post_process(text)
+
+            # Save the extracted code to a text file
+            self.guess_lang(text)
+
+            return text
+
+        except Exception as e:
+            print("Error:", str(e))
+
+
 # Set the path to the Tesseract OCR executable
-def check_for_tesseract():
-    tess_cmd = shutil.which("tesseract")
-    if tess_cmd is not None:
-        tess.pytesseract.tesseract_cmd = tess_cmd
-        return True
-    return False
-
-
-def check_for_tessdata_prefix():
-    if os.environ.get("TESSDATA_PREFIX"):
-        print("TESSDATA_PREFIX has been defined")
-    else:
-        # not sure how to deal with this yet
-        os.environ["TESSDATA_PREFIX"] = ""
-
-
-# FIXME: sometime the space formatting is very wrong
-def preserve_identation(frame: pd.DataFrame) -> str:
-    df1 = frame[(frame.conf != "-1") & (frame.text != " ") & (frame.text != "")]
-
-    # sort blocks vertically
-    code = ""
-    sorted_blocks = df1.groupby("block_num").first().sort_values("top").index.tolist()
-    for block in sorted_blocks:
-        curr = df1[df1["block_num"] == block]
-        sel = curr[curr.text.str.len() > 3]
-        char_w = (sel.width / sel.text.str.len()).mean()
-        prev_par, prev_line, prev_left = 0, 0, 0
-        text = ""
-        for ix, ln in curr.iterrows():
-            # add new line when necessary
-            if prev_par != ln["par_num"]:
-                text += "\n"
-                prev_par = ln["par_num"]
-                prev_line = ln["line_num"]
-                prev_left = 0
-            elif prev_line != ln["line_num"]:
-                text += "\n"
-                prev_line = ln["line_num"]
-                prev_left = 0
-
-            added = 0  # num of spaces that should be added
-            if ln["left"] / char_w > prev_left + 1:
-                added = int((ln["left"]) / char_w) - prev_left
-                text += " " * 2 * added  # go extra on identation by default
-            text += ln["text"] + " "
-            prev_left += len(ln["text"]) + added + 1
-        text += "\n"
-        code += text
-
-    return code
 
 
 """
@@ -85,50 +123,18 @@ def post_process(text):
 """
 
 
-def guess_lang(text_in: str):
-    print(text_in)
-    guess = Guess()
-    name = guess.language_name(text_in)
-    print(name)
-
-
-def s2c(image_path):
-    try:
-        img = Image.open(image_path)
-
-        # Custom Tesseract configuration for preserving whitespace and formatting
-        config = r"-c preserve_interword_spaces=1 --psm 6 --oem 2"
-
-        text_data = tess.image_to_data(img, config=config, output_type=Output.DICT)
-        # print(text_data)
-        frame = pd.DataFrame(text_data)
-        # print("------------------------------")
-        # print(frame)
-        text = preserve_identation(frame)
-
-        # Post-process the extracted text to maintain indentation
-        # processed_text = post_process(text)
-
-        # Save the extracted code to a text file
-        guess_lang(text)
-
-        return text
-
-    except Exception as e:
-        print("Error:", str(e))
-
-
 if __name__ == "__main__":
-    if check_for_tesseract() is False:
+    S2C = Screenshot2Code()
+    if S2C.check_for_tesseract() is False:
         print("Please make sure you have tesseract installed.")
         exit(1)
-    check_for_tessdata_prefix()
+    S2C.check_for_tessdata_prefix()
 
     if len(sys.argv) == 3:
         image_path = sys.argv[1]
         output_path = sys.argv[2]
 
-        text = s2c(image_path)
+        text = S2C.s2c(image_path)
         with open(output_path, "w") as f:
             if text:
                 f.write(text)
