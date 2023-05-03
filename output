@@ -1,0 +1,21 @@
+
+  data = get data('https://images-api.nasa.gov/search?g=nebulasmedia_type=image')   # Search   input: nebula 
+  items = data[ 'collection']['items'] 
+  total_hits = data['collection'][ 'metadata']['total_hits']     # Total number of search results 
+  total_pages = total hits // 100 + 1   #   Total pages 
+  #print(json.dumps(data[ 'collection'][ 'items'],indent=4)) 
+  with open('nasa _data.csv', 'w', newline='', encoding="utf-8") as f: 
+      writer = csv.writer(f) 
+      writer.writerow(["id", "title",   "keywords", "desc", "desc_clean"]) 
+      for i in range(l, total_pages + 1): 
+          data = get_data('https://images-api.nasa.gov/search?q=nebula&media_ type=image&page={}'.format(i))   # Search input: nebula 
+          items = data[ 'collection']['items'] 
+          for item in items: 
+              id = item['data'][0][ 'nasa_id'] 
+              title = item['data'][0][ 'title'] 
+              try: 
+                  keywords = item[ 'data'][0][ 'keywords'] 
+              except: 
+                  keywords = [] 
+              desc = item['data’'][0][ 'description'] 
+              writer.writerow([id, title, keywords,   desc]) 
