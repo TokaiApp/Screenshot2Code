@@ -99,7 +99,10 @@ def s2c(image_path):
         config = r"-c preserve_interword_spaces=1 --psm 6 --oem 2"
 
         text_data = tess.image_to_data(img, config=config, output_type=Output.DICT)
+        # print(text_data)
         frame = pd.DataFrame(text_data)
+        # print("------------------------------")
+        # print(frame)
         text = preserve_identation(frame)
 
         # Post-process the extracted text to maintain indentation
