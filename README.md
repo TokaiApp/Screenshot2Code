@@ -1,4 +1,4 @@
-# Screenshot2Code (S2C) - OCR Optimized for Code Screenshots!
+# Screenshot2Code (S2C) - OCR for Code Screenshots!
 
 **In a nutshell**:  
 Use Screenshot2Code to convert code screenshots to text while preserving its format and steering clear of clipboard limitations!
