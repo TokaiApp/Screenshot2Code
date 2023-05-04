@@ -1,14 +1,13 @@
 import os
 import shutil
 import sys
+from typing import Tuple
 
 import pandas as pd
 import pytesseract as tess
 from guesslang import Guess
 from PIL import Image
 from pytesseract import Output
-
-# os.environ["TESSDATA_PREFIX"] = "/Users/seth/opt/anaconda3/share/tessdata"
 
 
 class Screenshot2Code:
@@ -69,13 +68,14 @@ class Screenshot2Code:
         return code
 
     @staticmethod
-    def guess_lang(text_in: str):
+    def guess_lang(text_in: str) -> str | None:
         print(text_in)
         guess = Guess()
         name = guess.language_name(text_in)
         print(name)
+        return name
 
-    def convert(self, image_path):
+    def convert(self, image_path: str) -> Tuple[str | None]:
         try:
             img = Image.open(image_path)
 
@@ -93,12 +93,13 @@ class Screenshot2Code:
             # processed_text = post_process(text)
 
             # Save the extracted code to a text file
-            self.guess_lang(text)
+            lang = self.guess_lang(text)
 
-            return text
+            return lang, text
 
         except Exception as e:
             print("Error:", str(e))
+            return None, None
 
 
 """
@@ -132,7 +133,7 @@ if __name__ == "__main__":
         image_path = sys.argv[1]
         output_path = sys.argv[2]
 
-        text = S2C.convert(image_path)
+        lang, text = S2C.convert(image_path)
         with open(output_path, "w") as f:
             if text:
                 f.write(text)
