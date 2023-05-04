@@ -12,6 +12,7 @@ from pytesseract import Output
 
 
 class Screenshot2Code:
+    # Set the path to the Tesseract OCR executable
     @staticmethod
     def check_for_tesseract():
         tess_cmd = shutil.which("tesseract")
@@ -74,12 +75,12 @@ class Screenshot2Code:
         name = guess.language_name(text_in)
         print(name)
 
-    def s2c(self, image_path):
+    def convert(self, image_path):
         try:
             img = Image.open(image_path)
 
             # Custom Tesseract configuration for preserving whitespace and formatting
-            config = r"-c preserve_interword_spaces=1 --psm 6 --oem 2"
+            config = r"-c preserve_interword_spaces=1 --psm 6 --oem 3"
 
             text_data = tess.image_to_data(img, config=config, output_type=Output.DICT)
             # print(text_data)
@@ -98,9 +99,6 @@ class Screenshot2Code:
 
         except Exception as e:
             print("Error:", str(e))
-
-
-# Set the path to the Tesseract OCR executable
 
 
 """
@@ -134,7 +132,7 @@ if __name__ == "__main__":
         image_path = sys.argv[1]
         output_path = sys.argv[2]
 
-        text = S2C.s2c(image_path)
+        text = S2C.convert(image_path)
         with open(output_path, "w") as f:
             if text:
                 f.write(text)
