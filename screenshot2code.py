@@ -27,7 +27,7 @@ class Screenshot2Code:
             print("TESSDATA_PREFIX has been defined")
         else:
             # not sure how to deal with this yet
-            os.environ["TESSDATA_PREFIX"] = ""
+            os.environ["TESSDATA_PREFIX"] = "./tess_data_bak"
 
     # FIXME: sometime the space formatting is very wrong
     @staticmethod
