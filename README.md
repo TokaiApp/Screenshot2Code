@@ -20,7 +20,7 @@ You have three options:
 
 To save time and maintain format, you may choose 3!
 
-> Note: this project is currently in ideation stage.
+> Note: this project is still in development.
 
 ## The Basics of Copy-Paste
 Copy-pasting code is done all the time for a plethora of purposes!
