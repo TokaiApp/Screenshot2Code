@@ -13,13 +13,14 @@ from pytesseract import Output
 class Screenshot2Code:
     # Set the path to the Tesseract OCR executable
     @staticmethod
-    def check_for_tesseract():
+    def check_for_tesseract() -> bool:
         tess_cmd = shutil.which("tesseract")
         if tess_cmd is not None:
             tess.pytesseract.tesseract_cmd = tess_cmd
             return True
         return False
 
+    # FIXME: enforce dealing with the TESSDATA_PREFIX prefix
     @staticmethod
     def check_for_tessdata_prefix():
         if os.environ.get("TESSDATA_PREFIX"):
@@ -75,7 +76,7 @@ class Screenshot2Code:
         print(name)
         return name
 
-    def convert(self, image_path: str) -> Tuple[str | None]:
+    def convert(self, image_path: str) -> Tuple[str | None, str | None]:
         try:
             img = Image.open(image_path)
 
