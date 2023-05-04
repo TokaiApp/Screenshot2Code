@@ -24,10 +24,11 @@ class Screenshot2Code:
     @staticmethod
     def check_for_tessdata_prefix():
         if os.environ.get("TESSDATA_PREFIX"):
-            print("TESSDATA_PREFIX has been defined")
+            print("TESSDATA_PREFIX has been defined", file=sys.stderr)
         else:
             # not sure how to deal with this yet
             os.environ["TESSDATA_PREFIX"] = "./tess_data_bak"
+        return True
 
     # FIXME: sometime the space formatting is very wrong
     @staticmethod
@@ -70,10 +71,10 @@ class Screenshot2Code:
 
     @staticmethod
     def guess_lang(text_in: str) -> str | None:
-        print(text_in)
+        print(text_in, file=sys.stderr)
         guess = Guess()
         name = guess.language_name(text_in)
-        print(name)
+        print(name, file=sys.stderr)
         return name
 
     def convert(self, image_path: str) -> Tuple[str | None, str | None]:
@@ -126,7 +127,7 @@ def post_process(text):
 if __name__ == "__main__":
     S2C = Screenshot2Code()
     if S2C.check_for_tesseract() is False:
-        print("Please make sure you have tesseract installed.")
+        print("Please make sure you have tesseract installed.", file=sys.stderr)
         exit(1)
     S2C.check_for_tessdata_prefix()
 
