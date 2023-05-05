@@ -73,6 +73,12 @@ guesslang-experimental==2.2.3
     - termcolor [required: >=1.1.0, installed: 2.3.0]
     - typing-extensions [required: >=3.6.6, installed: 4.5.0]
     - wrapt [required: >=1.11.0,<1.15, installed: 1.14.1]
+pandas==2.0.1
+  - numpy [required: >=1.21.0, installed: 1.23.5]
+  - python-dateutil [required: >=2.8.2, installed: 2.8.2]
+    - six [required: >=1.5, installed: 1.16.0]
+  - pytz [required: >=2020.1, installed: 2023.3]
+  - tzdata [required: >=2022.1, installed: 2023.3]
 pip==23.1.2
 pipdeptree==2.7.0
 pytesseract==0.3.10
