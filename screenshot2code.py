@@ -9,6 +9,8 @@ from guesslang import Guess
 from PIL import Image
 from pytesseract import Output
 
+log_file = open("log", "w")
+
 
 class Screenshot2Code:
     # Set the path to the Tesseract OCR executable
@@ -24,7 +26,7 @@ class Screenshot2Code:
     @staticmethod
     def check_for_tessdata_prefix():
         if os.environ.get("TESSDATA_PREFIX"):
-            print("TESSDATA_PREFIX has been defined", file=sys.stderr)
+            print("log: TESSDATA_PREFIX has been defined", file=sys.stderr)
         else:
             # not sure how to deal with this yet
             os.environ["TESSDATA_PREFIX"] = "./tess_data_bak"
@@ -71,10 +73,10 @@ class Screenshot2Code:
 
     @staticmethod
     def guess_lang(text_in: str) -> str | None:
-        print(text_in, file=sys.stderr)
+        print(text_in, file=log_file)
         guess = Guess()
         name = guess.language_name(text_in)
-        print(name, file=sys.stderr)
+        print(name, file=log_file)
         return name
     
     @staticmethod
@@ -161,7 +163,7 @@ class Screenshot2Code:
             return lang, text
 
         except Exception as e:
-            print("Error:", str(e))
+            print("Error:", str(e), file=log_file)
             return None, None
 
 
