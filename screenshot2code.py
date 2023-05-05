@@ -18,7 +18,33 @@ class Screenshot2Code:
         print("Python version: ", sys.version)
         if sys.version_info < (3, 9):
             raise Exception("This program requires at least Python 3.9")
-    
+
+    @staticmethod
+    def copy_to_clipboard(filename: Union[str, None]):
+        # maybe something went wrong?
+        if filename is None:
+            raise Exception(f"filename `{filename}` argument is empty")
+        if not os.path.isfile(filename):
+            raise Exception(f"`{filename}` is not a file")
+
+        print("Copying to clipboard...")
+        # TODO: use filename instead of text value for Win32 and MacOS
+        if sys.platform == "win32":
+            # Windows
+            command = "echo " + filename.strip() + "| clip"
+            os.system(command)
+        elif sys.platform == "darwin":
+            # macOS
+            command = "echo " + filename.strip() + "| pbcopy"
+            os.system(command)
+        else:
+            # Linux and other Unix-based systems
+            if not shutil.which("xsel"):
+                raise Exception("You do not have `xsel` installed.")
+
+            command = "xsel --clipboard <" + filename
+            os.system(command)
+
     # Set the path to the Tesseract OCR executable
     @staticmethod
     def check_for_tesseract():
@@ -27,7 +53,6 @@ class Screenshot2Code:
             raise Exception("Please make sure you have tesseract installed")
         tess.pytesseract.tesseract_cmd = tess_cmd
         return True
-        
 
     # FIXME: enforce dealing with the TESSDATA_PREFIX prefix
     @staticmethod
@@ -173,6 +198,7 @@ class Screenshot2Code:
             print("Error:", str(e), file=log_file)
             return None, None
 
+
 if __name__ == "__main__":
     S2C = Screenshot2Code()
     S2C.version_check()
@@ -189,5 +215,6 @@ if __name__ == "__main__":
         with open(output_path, "w") as f:
             if text:
                 f.write(text)
+        S2C.copy_to_clipboard(output_path)
     else:
         print("Usage: python screenshot2code.py <screenshot_path> <output_path>")
