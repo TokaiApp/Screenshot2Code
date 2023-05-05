@@ -1,7 +1,9 @@
 # Screenshot2Code (S2C) - OCR for Code Screenshots!
 
-**In a nutshell**:  
-Use Screenshot2Code to convert code screenshots to text while preserving its format and steering clear of clipboard limitations!
+**In a nutshell**: Use Screenshot2Code to convert code screenshots to text while preserving its format and steering clear of clipboard limitations!
+> **Usage**: python3 screenshot2code.py <screenshot_filepath> <output_filepath>  
+> **Input**: screenshot image (.jpg, .png)  
+> **Output**: code pasted to output_filepath (can optionally copy to clipboard)
 
 Why is Screenshot2Code needed? Check out this [Medium article](https://medium.com/dxdr/screenshot2code-s2c-ocr-for-code-screenshots-be5de6a0b961).
 
