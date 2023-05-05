@@ -14,23 +14,24 @@ log_file = open("log", "w")
 
 class Screenshot2Code:
     @staticmethod
-    def version_check:
+    def version_check():
         print("Python version: ", sys.version)
         if sys.version_info < (3, 9):
             raise Exception("This program requires at least Python 3.9")
     
     # Set the path to the Tesseract OCR executable
     @staticmethod
-    def check_for_tesseract() -> bool:
+    def check_for_tesseract():
         tess_cmd = shutil.which("tesseract")
-        if tess_cmd is not None:
-            tess.pytesseract.tesseract_cmd = tess_cmd
-            return True
-        return False
+        if tess_cmd is None:
+            raise Exception("Please make sure you have tesseract installed")
+        tess.pytesseract.tesseract_cmd = tess_cmd
+        return True
+        
 
     # FIXME: enforce dealing with the TESSDATA_PREFIX prefix
     @staticmethod
-    def check_for_tessdata_prefix():
+    def check_for_tessdata_prefix() -> bool:
         if os.environ.get("TESSDATA_PREFIX"):
             print("log: TESSDATA_PREFIX has been defined", file=sys.stderr)
         else:
@@ -174,6 +175,7 @@ class Screenshot2Code:
 
 if __name__ == "__main__":
     S2C = Screenshot2Code()
+    S2C.version_check()
     if S2C.check_for_tesseract() is False:
         print("Please make sure you have tesseract installed.", file=sys.stderr)
         exit(1)
