@@ -29,7 +29,7 @@ class Screenshot2Code:
             # not sure how to deal with this yet
             os.environ["TESSDATA_PREFIX"] = "./tess_data_bak"
         return True
-
+    
     # FIXME: sometime the space formatting is very wrong
     @staticmethod
     def preserve_identation(frame: pd.DataFrame) -> str:
@@ -76,6 +76,67 @@ class Screenshot2Code:
         name = guess.language_name(text_in)
         print(name, file=sys.stderr)
         return name
+    
+    @staticmethod
+    def lang_to_extension(lang):
+        lang_extensions = {
+            'Assembly': '.asm',
+            'Batchfile': '.bat',
+            'C': '.c',
+            'C#': '.cs',
+            'C++': '.cpp',
+            'Clojure': '.clj',
+            'CMake': '.cmake',
+            'COBOL': '.cbl',
+            'CoffeeScript': '.coffee',
+            'CSS': '.css',
+            'CSV': '.csv',
+            'Dart': '.dart',
+            'DM': '.dm',
+            'Dockerfile': '.dockerfile',
+            'Elixir': '.ex',
+            'Erlang': '.erl',
+            'Fortran': '.f',
+            'Go': '.go',
+            'Groovy': '.groovy',
+            'Haskell': '.hs',
+            'HTML': '.html',
+            'INI': '.ini',
+            'Java': '.java',
+            'JavaScript': '.js',
+            'JSON': '.json',
+            'Julia': '.jl',
+            'Kotlin': '.kt',
+            'Lisp': '.lisp',
+            'Lua': '.lua',
+            'Makefile': '.mk',
+            'Markdown': '.md',
+            'Matlab': '.m',
+            'Objective-C': '.m',
+            'OCaml': '.ml',
+            'Pascal': '.pas',
+            'Perl': '.pl',
+            'PHP': '.php',
+            'PowerShell': '.ps1',
+            'Prolog': '.pl',
+            'Python': '.py',
+            'R': '.R',
+            'Ruby': '.rb',
+            'Rust': '.rs',
+            'Scala': '.scala',
+            'Shell': '.sh',
+            'SQL': '.sql',
+            'Swift': '.swift',
+            'TeX': '.tex',
+            'TOML': '.toml',
+            'TypeScript': '.ts',
+            'Verilog': '.v',
+            'Visual Basic': '.vb',
+            'XML': '.xml',
+            'YAML': '.yml',
+        }
+
+        return lang_extensions.get(lang, None)
 
     def convert(self, image_path: str) -> Tuple[str | None, str | None]:
         try:
