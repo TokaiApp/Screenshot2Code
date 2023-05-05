@@ -172,27 +172,6 @@ class Screenshot2Code:
             print("Error:", str(e), file=log_file)
             return None, None
 
-
-"""
-def post_process(text):
-    lines = text.split('\n')
-    processed_lines = []
-
-    for line in lines:
-        # Remove leading and trailing whitespaces
-        stripped_line = line.strip()
-
-        # Count the number of leading spaces
-        leading_spaces = len(line) - len(stripped_line)
-
-        # Replace leading spaces with the appropriate number of spaces for indentation
-        indented_line = ' ' * leading_spaces + stripped_line
-        processed_lines.append(indented_line)
-
-    return '\n'.join(processed_lines)
-"""
-
-
 if __name__ == "__main__":
     S2C = Screenshot2Code()
     if S2C.check_for_tesseract() is False:
