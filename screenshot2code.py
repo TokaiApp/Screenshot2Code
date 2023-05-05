@@ -1,7 +1,7 @@
 import os
 import shutil
 import sys
-from typing import Tuple
+from typing import Tuple, Union
 
 import pandas as pd
 import pytesseract as tess
@@ -72,7 +72,7 @@ class Screenshot2Code:
         return code
 
     @staticmethod
-    def guess_lang(text_in: str) -> str | None:
+    def guess_lang(text_in: str) -> Union[str, None]:
         print(text_in, file=log_file)
         guess = Guess()
         name = guess.language_name(text_in)
@@ -80,7 +80,7 @@ class Screenshot2Code:
         return name
 
     @staticmethod
-    def lang_to_extension(lang: str) -> str | None:
+    def lang_to_extension(lang: str) -> Union[str, None]:
         lang_extensions = {
             "Assembly": ".asm",
             "Batchfile": ".bat",
@@ -140,7 +140,7 @@ class Screenshot2Code:
 
         return lang_extensions.get(lang, None)
 
-    def convert(self, image_path: str) -> Tuple[str | None, str | None]:
+    def convert(self, image_path: str) -> Tuple[Union[str, None], Union[str, None]]:
         try:
             img = Image.open(image_path)
 
