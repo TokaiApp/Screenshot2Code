@@ -13,6 +13,12 @@ log_file = open("log", "w")
 
 
 class Screenshot2Code:
+    @staticmethod
+    def version_check:
+        print("Python version: ", sys.version)
+        if sys.version_info < (3, 9):
+            raise Exception("This program requires at least Python 3.9")
+    
     # Set the path to the Tesseract OCR executable
     @staticmethod
     def check_for_tesseract() -> bool:
