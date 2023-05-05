@@ -7,38 +7,6 @@ Why is Screenshot2Code needed? Check out this [Medium article](https://medium.co
 
 ## Screenshot2Code vs. Existing Methods
 
-#### Conventional Copy-Paste
-> Show visual (.gif) of copying/pasting code across two platforms that causes loss of information.
-
-#### Conventional OCR
-
-This is a code snippet from a typical data science program.
-![Input](python_input.png)
-
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
-
-![Output](python_output.png)
-
-![Input](python_input.png)
-
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
-
-![Output](clipboard.png)
-
-![Input](python_input.png)
-
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
-&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
-
-![Output](s2c_output.png)
-
-
-As shown above, the output is not only totally misformatted Python code - it's also unrunnable.
-
-#### Screenshot2Code
-> Show visual (.gif) of Screenshot2Code converting screenshot into formatted code.
 
 Why is Screenshot2Code needed?
 - Existing frameworks, libraries, and APIs tend to fall into one of two categories: (1) proprietary and closed-source or (2) open-source but designed for images and not particularly code.
