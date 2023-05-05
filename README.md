@@ -76,7 +76,6 @@ To the best of our knowledge, there are currently no open-source repositories or
 
 
 
-
 ## Technical
 
 ### Screenshot Formats
@@ -107,5 +106,5 @@ We plan to support some of the most common languages such as:
 If there are other languages you would like to be added, please contact us!
 
 #### Authorship
-This project is led by [Seth Harding](https://linkedin.com/in/SethHasi).  
-For more information or to find out how to contribute to Screenshot2Code, please send an email! seth@dxdr.ai
+This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) and [Matthieu Desir](github.com/matdexir).  
+For more information or to find out how to contribute to Screenshot2Code, please send an email! seth@dragonx.ai or matthieudesir@gmail.com
