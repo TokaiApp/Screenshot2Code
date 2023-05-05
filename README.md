@@ -27,6 +27,14 @@ This is a code snippet from a typical data science program.
 
 ![Input](clipboard.png)
 
+![Input](python_input.png)
+
+&darr;  &nbsp; &darr;  &nbsp; &;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
+&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
+
+![Output](s2c_output.png)
+
+
 As shown above, the output is not only totally misformatted Python code - it's also unrunnable.
 
 #### Screenshot2Code
