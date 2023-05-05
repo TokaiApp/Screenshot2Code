@@ -25,11 +25,11 @@ This is a code snippet from a typical data science program.
 &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
 &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
 
-![Input](clipboard.png)
+![Output](clipboard.png)
 
 ![Input](python_input.png)
 
-&darr;  &nbsp; &darr;  &nbsp; &;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
+&darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; 
 &darr;  &nbsp; &darr;  &nbsp; &darr;  &nbsp; &darr;
 
 ![Output](s2c_output.png)
