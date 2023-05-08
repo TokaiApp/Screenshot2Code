@@ -108,7 +108,7 @@ class Screenshot2Code:
         print(text_in, file=log_file)
         guess = Guess()
         name = guess.language_name(text_in)
-        print(name, file=log_file)
+        print(f"The language guessed is {name}", file=log_file)
         return name
 
     @staticmethod
