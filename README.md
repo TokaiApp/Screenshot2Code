@@ -36,6 +36,9 @@ We support all 54 languages included in the Guesslang Python package, including 
 - [ ] Eliminate line numbers and other irrelevant information
 - [ ] Copy submitted code to clipboard
 
+## Troubleshooting
+1. If it says that pip is not found when sourcing the virtualenv then consider `python -m ensurepip --upgrade`.
+
 #### Authorship
 This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) and [Matthieu Desir](https://github.com/matdexir).  
 For more information or to find out how to contribute to Screenshot2Code, please send an email! seth@dragonx.ai or matthieudesir@gmail.com
