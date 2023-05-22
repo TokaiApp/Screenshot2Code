@@ -180,16 +180,9 @@ class Screenshot2Code:
             config = r"-c preserve_interword_spaces=1 --psm 6 --oem 3"
 
             text_data = tess.image_to_data(img, config=config, output_type=Output.DICT)
-            # print(text_data)
             frame = pd.DataFrame(text_data)
-            # print("------------------------------")
-            # print(frame)
             text = self.preserve_identation(frame)
 
-            # Post-process the extracted text to maintain indentation
-            # processed_text = post_process(text)
-
-            # Save the extracted code to a text file
             lang = self.guess_lang(text)
 
             return lang, text
