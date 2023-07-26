@@ -5,6 +5,8 @@
 > **Input**: screenshot image (.jpg, .png)  
 > **Output**: code pasted to output_filepath (can optionally copy to clipboard)
 
+Python package link: https://pypi.org/project/screenshot2code/0.0.1/
+
 Why is Screenshot2Code needed? Check out this [Medium article](https://medium.com/dxdr/screenshot2code-s2c-ocr-for-code-screenshots-be5de6a0b961).
 
 ## Screenshot2Code vs. Existing Methods
@@ -41,4 +43,4 @@ We support all 54 languages included in the Guesslang Python package, including 
 
 #### Authorship
 This project is led by [Seth Harding](https://linkedin.com/in/SethHasi) and [Matthieu Desir](https://github.com/matdexir).  
-For more information or to find out how to contribute to Screenshot2Code, please send an email! seth@dragonx.ai or matthieudesir@gmail.com
+For more information or to find out how to contribute to Screenshot2Code, please send an email! seth@tokai.app or matthieudesir@gmail.com
